@@ -4,9 +4,9 @@
 	env.WORKSPACE = 'C:/jenkins_home/workspace/valic-pso/Consumer-Valic-PipelineBuilder/valic-pso/master'
 echo 'FINE TILL HERE'
 	env();
-echo 'hi'
+
 	env.WORKSPACE=pwd()
-echo 'hi'
+
 	try 
 
 	{ 
@@ -17,7 +17,7 @@ echo 'hi'
 			// def sourceDir = srcJob.rawBuild.environment.WORKSPACE
 			// echo "${sourceDir}"
 		
-			//bat 'git init &&  git config http.sslVerify false'
+			bat 'git init &&  git config http.sslVerify false'
 			checkout([$class: 'GitSCM', branches: [[name: '*/master']],
 			userRemoteConfigs: [[url: 'https://github.com/vmsiva/Valic-pso-master.git']]])
 
