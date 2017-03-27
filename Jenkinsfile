@@ -130,7 +130,7 @@ echo 'FINE TILL HERE'
 							], 
 							startRelease: true
 
-	}
+	//}
 	catch (err) {
 		currentBuild.result = "FAILURE"    
 		throw err
