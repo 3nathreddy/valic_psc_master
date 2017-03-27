@@ -1,4 +1,4 @@
-node('TAW005')
+//node('TAW005')
 {
 	//env.WORKSPACE = 'C:/jenkins_home/jenkins-taw005/21d10a93/workspace/valic-pso/Consumer-Valic-PipelineBuilder/valic-pso/master'
 	//env();
@@ -14,7 +14,7 @@ node('TAW005')
 		
 			bat 'git init &&  git config http.sslVerify false'
 			checkout([$class: 'GitSCM', branches: [[name: '*/master']],
-			userRemoteConfigs: [[url: 'https://github.aig.net/Consumer/valic-pso.git']]])
+			userRemoteConfigs: [[url: 'https://github.com/vmsiva/Valic-pso-master.git']]])
 
 		stage 'Build'
 
