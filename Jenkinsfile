@@ -1,7 +1,7 @@
 //node('TAW005')
 //{
-	//env.WORKSPACE = 'C:/jenkins_home/jenkins-taw005/21d10a93/workspace/valic-pso/Consumer-Valic-PipelineBuilder/valic-pso/master'
-	//env();
+	env.WORKSPACE = 'C:/jenkins_home/workspace/valic-pso/Consumer-Valic-PipelineBuilder/valic-pso/master'
+	env();
 	env.WORKSPACE=pwd()
 	try 
 	{ 
