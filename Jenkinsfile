@@ -8,7 +8,7 @@ echo 'hi'
 	env.WORKSPACE=pwd()
 echo 'hi'
 	try 
-echo 'hi'
+
 	{ 
 		stage 'Checkout'
 		
