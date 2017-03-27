@@ -3,13 +3,13 @@
 
 	env.WORKSPACE = 'C:/jenkins_home/workspace/valic-pso/Consumer-Valic-PipelineBuilder/valic-pso/master'
 echo 'FINE TILL HERE'
-	env();
+	//env();
 
-	env.WORKSPACE=pwd()
+	//env.WORKSPACE=pwd()
 
-	try 
+	//try 
 
-	{ 
+	//{ 
 		stage 'Checkout'
 		
 			// temporary  code  for now 
