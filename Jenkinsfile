@@ -143,7 +143,7 @@
 
 		//    emailext attachLog: true, attachmentsPattern: '**/TestResult.xml', body: 'It appears that ${env.BUILD_URL} with status = ${currentBuild.result}', compressLog: true, replyTo: 'girdhar.katiyar@aig.com', subject: '${env.JOB_NAME} (${env.BUILD_NUMBER}) with status = ${currentBuild.result}', to: 'girdhar.katiyar@aig.com'
 	}
-}
+//}
 
 def version(def AssemblyInfo) {
 	def matcher = readFile("${AssemblyInfo}") =~  '\\[assembly: AssemblyVersion\\("(\\d*).(\\d*).(\\d*)'
@@ -154,4 +154,4 @@ def version(def AssemblyInfo) {
 					 + versionDetails[3]
 					  )
 					 : null
-//}
+}
