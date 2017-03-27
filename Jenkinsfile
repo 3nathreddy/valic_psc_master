@@ -1,8 +1,8 @@
 //node('TAW005')
 //{
-echo 'hi'
+
 	env.WORKSPACE = 'C:/jenkins_home/workspace/valic-pso/Consumer-Valic-PipelineBuilder/valic-pso/master'
-echo 'hi'
+echo 'FINE TILL HERE'
 	env();
 echo 'hi'
 	env.WORKSPACE=pwd()
