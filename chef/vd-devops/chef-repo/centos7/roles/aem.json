@@ -1,0 +1,107 @@
+{
+  "name": "aem",
+  "description": "AEM Customization",
+  "json_class": "Chef::Role",
+  "chef_type": "role",
+  "default_attributes": {
+  	"aem": {
+      "download_url": "file:///vagrant/binaries/aem/aem-6-1-quickstart.jar",
+      "license_url": "file:///vagrant/binaries/aem/license.properties",
+      "version": "6.1",
+      "aem_options": {
+  		"CQ_HEAP_MIN": "2048",
+  		"CQ_HEAP_MAX": "2048",
+  		"CQ_PERMGEN": "512"
+  	  },
+  	  "dispatcher": {
+  		"version": "2.4",
+  		"webserver_type": "apache2.4",
+  		"mod_dispatcher_url": "file:///vagrant/binaries/aem/dispatcher-apache2.4-4.2.0.so",
+  		"log_level":"3",
+  		"use_processed_url":"1",
+  		"listen_port": "4580"
+  	  },
+  	  "publish":{
+  	  	"cache_hosts": [
+	  		{	
+				"ipaddress":"localhost:4580",
+				"port":"4580",
+				"user":"admin",
+				"password":"admin"
+			}
+		],
+		"comment": {
+			"deploy_pkgs": [
+				{
+					"name": "acs-aem-commons-content",
+					"version": "2.8.0",
+					"url": "file:///vagrant/binaries/aem/acs-aem-commons-content-2.8.0.zip",
+					"update": true,
+					"group_id": "adobe/consulting",
+					"recursive": true,
+					"properties_file": "META-INF/vault/properties.xml",
+					"action": "upload"
+				},
+				{
+					"name": "acs-aem-commons-content",
+					"version": "2.8.0",
+					"url": "file:///vagrant/binaries/aem/acs-aem-commons-content-2.8.0.zip",
+					"update": true,
+					"group_id": "adobe/consulting",
+					"recursive": true,
+					"properties_file": "META-INF/vault/properties.xml",
+					"action": "install"
+				}
+			]
+		  }
+  	  }
+  	  
+    },
+   	"java": {
+			"jdk_version": "8",
+			"install_flavor": "oracle",
+			"jdk": {
+				"8": {
+					"x86_64": {
+						"url": "file:///vagrant/binaries/chef/jdk-8u101-linux-x64.tar.gz"
+					          }
+				     }
+			       }
+			 }	   ,
+    "apache":{
+		"listen":[
+			"*:4580"
+		],
+		"default_modules": [
+			"filter",
+			"headers",
+			 "status",
+			 "alias",
+			 "auth_basic",
+			 "authn_core",
+			 "authn_file",
+			 "authz_core",
+			 "authz_groupfile",
+			 "authz_host",
+			 "authz_user",
+			 "autoindex",
+			 "deflate",
+			 "dir",
+			 "env",
+			 "mime",
+			 "negotiation",
+			 "setenvif"
+		]
+	}
+  },
+  "override_attributes": {
+  },
+  "run_list": [
+    "recipe[aem::author]",
+    "recipe[aem::publish]",
+    "recipe[aem::dispatcher]"
+  ],
+  "env_run_lists": {
+  }
+}     
+

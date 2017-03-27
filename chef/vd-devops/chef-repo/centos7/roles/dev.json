@@ -1,0 +1,74 @@
+{
+  "name": "dev",
+  "description": "Eclise installation and Attributes",
+  "json_class": "Chef::Role",
+  "chef_type": "role",
+  "default_attributes": {
+    },
+
+	"override_attributes": {
+		"java": {
+			"jdk_version": "8",
+			"install_flavor": "oracle",
+			"jdk": {
+				"8": {
+					"x86_64": {
+						"url": "file:///vagrant/binaries/chef/jdk-8u101-linux-x64.tar.gz"
+					}
+				}
+			}
+		},	
+	    "eclipse" :{
+	/*	 "url": "file:///vagrant/binaries/chef/eclipse-jee-kepler-SR2-linux-gtk-x86_64.tar.gz",
+		 "plugins" : [{
+						"http://download.eclipse.org/releases/kepler" : "org.eclipse.egit.feature.group"
+					  }, {
+						"http://download.eclipse.org/releases/kepler" : "org.eclipse.m2e.feature.feature.group"
+					  }, {
+						"http://vrapper.sourceforge.net/update-site/stable": "net.sourceforge.vrapper.feature.group"
+						},
+						{
+						"http://repo1.maven.org/maven2/.m2e/connectors/m2eclipse-tycho/0.6.0/N/0.6.0.201207302152/": "org.sonatype.tycho.m2e.feature.feature.group"
+						},
+						{ "https://eclipse.adobe.com/aem/dev-tools": "org.apache.sling.ide.feature.feature.group"
+						},
+						{ "https://eclipse.adobe.com/aem/dev-tools": "org.apache.sling.ide.m2e-feature.feature.group"
+						},
+						{ "https://eclipse.adobe.com/aem/dev-tools": "org.apache.sling.ide.sightly-feature.feature.group"
+						},		
+						{ "https://eclipse.adobe.com/aem/dev-tools": "com.adobe.granite.ide.feature.feature.group"
+						}
+					]
+     */
+	     "version" : "mars2",  
+		 "url": "file:///vagrant/binaries/chef/eclipse-jee-mars-2-linux-gtk-x86_64.tar.gz",
+		 "plugins" : [{
+						"http://download.eclipse.org/releases/mars" : "org.eclipse.egit.feature.group"
+					  }, {
+						"http://download.eclipse.org/releases/mars" : "org.eclipse.m2e.feature.feature.group"
+					  }, {
+						"http://vrapper.sourceforge.net/update-site/stable": "net.sourceforge.vrapper.feature.group"
+						},
+						{
+						"http://repo1.maven.org/maven2/.m2e/connectors/m2eclipse-tycho/0.6.0/N/0.6.0.201207302152/": "org.sonatype.tycho.m2e.feature.feature.group"
+						},
+						{ "https://eclipse.adobe.com/aem/dev-tools": "org.apache.sling.ide.feature.feature.group"
+						},
+						{ "https://eclipse.adobe.com/aem/dev-tools": "org.apache.sling.ide.m2e-feature.feature.group"
+						},
+						{ "https://eclipse.adobe.com/aem/dev-tools": "org.apache.sling.ide.sightly-feature.feature.group"
+						},		
+						{ "https://eclipse.adobe.com/aem/dev-tools": "com.adobe.granite.ide.feature.feature.group"
+						}
+					]
+   
+		 }
+    },
+  "run_list": [
+    "recipe[eclipse]",
+	"recipe[maven]"
+  ],
+  "env_run_lists": {
+  }
+}     
+

@@ -1,0 +1,15 @@
+#Berkshelf
+chocolatey-1.0.3		
+seven_zip-2.0.2
+visualstudio-1.2.0
+compat_resource-12.16.2
+ms_dotnet45-3.1.0
+ohai-4.2.3
+windows-2.1.1
+
+# Downloaded
+https://github.com/chef-cookbooks/sql_server
+https://github.com/justinrstout/nunit
+
+# Custom
+sql_data

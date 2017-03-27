@@ -1,0 +1,21 @@
+{
+  "name": "oracle",
+  "description": "ORACLE Customization",
+  "json_class": "Chef::Role",
+  "chef_type": "role",
+  "default_attributes": {
+  	"oracle-xe": {
+      "url": "file:///vagrant/binaries/oracle/oracle-xe-11.2.0-1.0.x86_64.rpm"
+        	  
+    }
+        
+  },
+  "override_attributes": {
+  },
+  "run_list": [
+    "recipe[oracle-xe::default]"
+  ],
+  "env_run_lists": {
+  }
+}     
+

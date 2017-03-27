@@ -1,0 +1,43 @@
+{
+  "name": "eclipse",
+  "description": "Installs/Configures eclipse",
+  "long_description": "# Description\n- Installs and configures the Eclipse IDE\n- Installs eclipse plugins\n\n# Requirements\n- java cookbook\n- ark cookbook\n\n# Platform\n- Linux\n- OSX\n\n# Usage\n \n- Override the eclipse version, release_code, and suite attributes to automatically\nget the eclipse version URL or use the URL attribute to override and use\na static URL\n\n# Attributes\n\n- `default['eclipse']['version']` - Name of eclipse release, default `kepler`\n- `default['eclipse']['release_code']` = Release update code (i.e. 'R',\n'SR1', 'SR2'), default `R`\n- `default['eclipse']['arch']` - x64_86 or blank for i586\n- `default['eclipse']['suite']` - suite code (i.e. 'java', 'jee',\n'cpp'), default `jee`\n- `default['eclipse']['plugins']` - list of repositories and plugins to automatically\ninstall with this eclipse deployment, default `[{\"http://download.eclipse.org/releases/kepler\"=>\"org.eclipse.egit.feature.group\"},{\"http://download.eclipse.org/technology/m2e/releases\"=>\"org.eclipse.m2e.feature.feature.group\"}, {\"http://vrapper.sourceforge.net/update-site/stable\"=>\"net.sourceforge.vrapper.feature.group\"}]`\n\n\n-`default['eclipse']['url']` - override the eclipse url version\nattributes above with a static URL, default `''`\n\n# eclipse plugins\n- Egit - `org.eclipse.egit`\n- m2e - `org.eclipse.m2e.feature`\n- Vrapper - `net.sourceforge.vwrapper`\n\n# Other eclipse docs\n- [eclipse plugins](http://help.eclipse.org/helios/index.jsp?topic=/org.eclipse.platform.doc.isv/guide/p2_director.html)\n\n# Author\n\nAuthor:: Geocent, LLC (<YOUR_EMAIL>)\n",
+  "maintainer": "Geocent, LLC",
+  "maintainer_email": "tyler.sanders@geocent.com",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+    "java": ">= 0.0.0",
+    "ark": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0",
+  "source_url": "",
+  "issues_url": "",
+  "privacy": false,
+  "chef_versions": [
+
+  ],
+  "ohai_versions": [
+
+  ],
+  "gems": [
+
+  ]
+}

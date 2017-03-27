@@ -1,0 +1,15 @@
+aem-2.2.0
+apache2-3.2.2
+apt-5.0.0
+ark-0.8.2
+build-essential-7.0.2
+centos7-recipes-here.txt
+compat_resource-12.16.2
+homebrew-2.1.2
+iptables-3.0.1
+java-1.42.0
+list.txt
+mingw-1.2.4
+ohai-4.2.2
+seven_zip-2.0.2
+windows-2.1.0

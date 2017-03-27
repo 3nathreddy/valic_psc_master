@@ -1,0 +1,1 @@
+default['nunit']['version'] = 'C:\vagrant\binaries\dotnet\NUnit-2.6.4.msi'

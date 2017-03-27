@@ -1,0 +1,650 @@
+{
+  "name": "win2008r2",
+  "normal": {
+    "tags": [
+
+    ]
+  },
+  "default": {
+    "sql_server": {
+      "server": {
+        "url": "file:///C:/vagrant/binaries/dotnet/SQLEXPR_x64_ENU.exe"
+      },
+      "version": "2014",
+      "server_sa_password": "changeit",
+      "accept_eula": "true",
+      "update_enabled": "false",
+      "instance_name": "MSSQLSERVER",
+      "sysadmins": [
+        "vagrant"
+      ],
+      "agent_startup": "Automatic"
+    },
+    "ms_dotnet45": {
+      "http_url": "file:///C:/vagrant/binaries/dotnet/NDP452-KB2901907-x86-x64-AllOS-ENU.exe"
+    },
+    "visualstudio": {
+      "2015": {
+        "community": {
+          "default_source": "file:///C:/vagrant/binaries/dotnet/vs2015.3.com_enu.iso"
+        }
+      }
+    },
+    "override_attributes": {
+
+    },
+    "override_runlist": [
+      "ms_dotnet45::default",
+      "visualstudio::default",
+      "nunit::default"
+    ],
+    "env_run_lists": {
+
+    }
+  },
+  "automatic": {
+    "cpu": {
+      "0": {
+        "cores": 2,
+        "vendor_id": "GenuineIntel",
+        "family": "2",
+        "model": "15363",
+        "stepping": "3",
+        "physical_id": "CPU0",
+        "model_name": "Intel64 Family 6 Model 60 Stepping 3",
+        "mhz": "1995",
+        "cache_size": " KB"
+      },
+      "total": 2,
+      "cores": 2,
+      "real": 1
+    },
+    "filesystem": {
+      "C:": {
+        "kb_size": 64317550,
+        "kb_available": 54848069,
+        "kb_used": 9469481,
+        "percent_used": 14,
+        "mount": "C:",
+        "fs_type": "ntfs",
+        "volume_name": ""
+      }
+    },
+    "kernel": {
+      "os_info": {
+        "boot_device": "\\Device\\HarddiskVolume1",
+        "build_number": "7601",
+        "build_type": "Multiprocessor Free",
+        "caption": "Microsoft Windows Server 2008 R2 Standard ",
+        "code_set": "1252",
+        "country_code": "1",
+        "creation_class_name": "Win32_OperatingSystem",
+        "cs_creation_class_name": "Win32_ComputerSystem",
+        "csd_version": "Service Pack 1",
+        "cs_name": "WIN2008R2",
+        "current_time_zone": -480,
+        "data_execution_prevention_32_bit_applications": true,
+        "data_execution_prevention_available": true,
+        "data_execution_prevention_drivers": true,
+        "data_execution_prevention_support_policy": 3,
+        "debug": false,
+        "description": "",
+        "distributed": false,
+        "encryption_level": 256,
+        "foreground_application_boost": 2,
+        "free_physical_memory": "1178008",
+        "free_space_in_paging_files": "524288",
+        "free_virtual_memory": "1682516",
+        "install_date": "20150708205456.000000-420",
+        "large_system_cache": null,
+        "last_boot_up_time": "20170205224659.328000-480",
+        "local_date_time": "20170205225946.119000-480",
+        "locale": "0409",
+        "manufacturer": "Microsoft Corporation",
+        "max_number_of_processes": -1,
+        "max_process_memory_size": "8589934464",
+        "mui_languages": [
+          "en-US"
+        ],
+        "name": "Microsoft Windows Server 2008 R2 Standard |C:\\Windows|\\Device\\Harddisk0\\Partition2",
+        "number_of_licensed_users": 0,
+        "number_of_processes": 46,
+        "number_of_users": 2,
+        "operating_system_sku": 7,
+        "organization": "",
+        "os_architecture": "64-bit",
+        "os_language": 1033,
+        "os_product_suite": 272,
+        "os_type": 18,
+        "other_type_description": null,
+        "pae_enabled": null,
+        "plus_product_id": null,
+        "plus_version_number": null,
+        "primary": true,
+        "product_type": 3,
+        "registered_user": "Windows User",
+        "serial_number": "00477-001-0000421-84724",
+        "service_pack_major_version": 1,
+        "service_pack_minor_version": 0,
+        "size_stored_in_paging_files": "524288",
+        "status": "OK",
+        "suite_mask": 272,
+        "system_device": "\\Device\\HarddiskVolume2",
+        "system_directory": "C:\\Windows\\system32",
+        "system_drive": "C:",
+        "total_swap_space_size": null,
+        "total_virtual_memory_size": "2620984",
+        "total_visible_memory_size": "2096696",
+        "version": "6.1.7601",
+        "windows_directory": "C:\\Windows"
+      },
+      "name": "Microsoft Windows Server 2008 R2 Standard ",
+      "release": "6.1.7601",
+      "version": "6.1.7601 Service Pack 1 Build 7601",
+      "os": "WINNT",
+      "cs_info": {
+        "admin_password_status": 3,
+        "automatic_managed_pagefile": false,
+        "automatic_reset_boot_option": true,
+        "automatic_reset_capability": true,
+        "boot_option_on_limit": null,
+        "boot_option_on_watch_dog": null,
+        "boot_rom_supported": true,
+        "bootup_state": "Normal boot",
+        "caption": "WIN2008R2",
+        "chassis_bootup_state": 3,
+        "creation_class_name": "Win32_ComputerSystem",
+        "current_time_zone": -480,
+        "daylight_in_effect": false,
+        "description": "AT/AT COMPATIBLE",
+        "dns_host_name": "win2008r2",
+        "domain": "WORKGROUP",
+        "domain_role": 2,
+        "enable_daylight_savings_time": true,
+        "front_panel_reset_status": 3,
+        "infrared_supported": false,
+        "initial_load_info": null,
+        "install_date": null,
+        "keyboard_password_status": 3,
+        "last_load_info": null,
+        "manufacturer": "innotek GmbH",
+        "model": "VirtualBox",
+        "name": "WIN2008R2",
+        "name_format": null,
+        "network_server_mode_enabled": true,
+        "number_of_logical_processors": 2,
+        "number_of_processors": 1,
+        "oem_string_array": [
+          "vboxVer_5.1.12",
+          "vboxRev_112440"
+        ],
+        "part_of_domain": false,
+        "pause_after_reset": "-1",
+        "pc_system_type": 0,
+        "power_management_capabilities": null,
+        "power_management_supported": null,
+        "power_on_password_status": 3,
+        "power_state": 0,
+        "power_supply_state": 3,
+        "primary_owner_contact": null,
+        "primary_owner_name": "Windows User",
+        "reset_capability": 1,
+        "reset_count": -1,
+        "reset_limit": -1,
+        "roles": [
+          "LM_Workstation",
+          "LM_Server",
+          "NT",
+          "Server_NT"
+        ],
+        "status": "OK",
+        "support_contact_description": null,
+        "system_startup_delay": null,
+        "system_startup_options": null,
+        "system_startup_setting": null,
+        "system_type": "x64-based PC",
+        "thermal_state": 3,
+        "total_physical_memory": "2147016704",
+        "user_name": "WIN2008R2\\vagrant",
+        "wake_up_type": 6,
+        "workgroup": "WORKGROUP"
+      },
+      "machine": "x86_64"
+    },
+    "memory": {
+      "swap": {
+        "total": "524288kB",
+        "free": "524288kB"
+      },
+      "total": "2096696kB",
+      "free": "1177292kB"
+    },
+    "network": {
+      "interfaces": {
+        "0xb": {
+          "configuration": {
+            "ip_address": [
+              "10.0.2.15",
+              "fe80::89a7:ce9d:5105:bb75"
+            ],
+            "arp_always_source_route": null,
+            "arp_use_ether_snap": null,
+            "caption": "[00000007] Intel(R) PRO/1000 MT Desktop Adapter",
+            "database_path": "%SystemRoot%\\System32\\drivers\\etc",
+            "dead_gw_detect_enabled": null,
+            "default_ip_gateway": [
+              "10.0.2.2"
+            ],
+            "default_tos": null,
+            "default_ttl": null,
+            "description": "Intel(R) PRO/1000 MT Desktop Adapter",
+            "dhcp_enabled": true,
+            "dhcp_lease_expires": "20170206224739.000000-480",
+            "dhcp_lease_obtained": "20170205224739.000000-480",
+            "dhcp_server": "10.0.2.2",
+            "dns_domain": "ODC.COM",
+            "dns_domain_suffix_search_order": [
+              "ODC.COM"
+            ],
+            "dns_enabled_for_wins_resolution": false,
+            "dns_host_name": "win2008r2",
+            "dns_server_search_order": [
+              "10.0.2.3"
+            ],
+            "domain_dns_registration_enabled": false,
+            "forward_buffer_memory": null,
+            "full_dns_registration_enabled": true,
+            "gateway_cost_metric": [
+              0
+            ],
+            "igmp_level": null,
+            "index": 7,
+            "interface_index": 11,
+            "ip_connection_metric": 10,
+            "ip_enabled": true,
+            "ip_filter_security_enabled": false,
+            "ip_port_security_enabled": null,
+            "ip_sec_permit_ip_protocols": [
+
+            ],
+            "ip_sec_permit_tcp_ports": [
+
+            ],
+            "ip_sec_permit_udp_ports": [
+
+            ],
+            "ip_subnet": [
+              "255.255.255.0",
+              "64"
+            ],
+            "ip_use_zero_broadcast": null,
+            "ipx_address": null,
+            "ipx_enabled": null,
+            "ipx_frame_type": null,
+            "ipx_media_type": null,
+            "ipx_network_number": null,
+            "ipx_virtual_net_number": null,
+            "keep_alive_interval": null,
+            "keep_alive_time": null,
+            "mac_address": "08:00:27:36:52:31",
+            "mtu": null,
+            "num_forward_packets": null,
+            "pmtubh_detect_enabled": null,
+            "pmtu_discovery_enabled": null,
+            "service_name": "E1G60",
+            "setting_id": "{CD6A0168-C456-4D23-B43A-90A5A2304D57}",
+            "tcpip_netbios_options": 0,
+            "tcp_max_connect_retransmissions": null,
+            "tcp_max_data_retransmissions": null,
+            "tcp_num_connections": null,
+            "tcp_use_rfc1122_urgent_pointer": null,
+            "tcp_window_size": 64240,
+            "wins_enable_lm_hosts_lookup": true,
+            "wins_host_lookup_file": null,
+            "wins_primary_server": null,
+            "wins_scope_id": "",
+            "wins_secondary_server": null
+          },
+          "instance": {
+            "adapter_type": "Ethernet 802.3",
+            "adapter_type_id": 0,
+            "auto_sense": null,
+            "availability": 3,
+            "caption": "[00000007] Intel(R) PRO/1000 MT Desktop Adapter",
+            "config_manager_error_code": 0,
+            "config_manager_user_config": false,
+            "creation_class_name": "Win32_NetworkAdapter",
+            "description": "Intel(R) PRO/1000 MT Desktop Adapter",
+            "device_id": "7",
+            "error_cleared": null,
+            "error_description": null,
+            "guid": "{CD6A0168-C456-4D23-B43A-90A5A2304D57}",
+            "index": 7,
+            "install_date": null,
+            "installed": true,
+            "interface_index": 11,
+            "last_error_code": null,
+            "mac_address": "08:00:27:36:52:31",
+            "manufacturer": "Intel",
+            "max_number_controlled": 0,
+            "max_speed": null,
+            "name": "Intel(R) PRO/1000 MT Desktop Adapter",
+            "net_connection_id": "Local Area Connection",
+            "net_connection_status": 2,
+            "net_enabled": true,
+            "network_addresses": null,
+            "permanent_address": null,
+            "physical_adapter": true,
+            "pnp_device_id": "PCI\\VEN_8086&DEV_100E&SUBSYS_001E8086&REV_02\\3&267A616A&0&18",
+            "power_management_capabilities": null,
+            "power_management_supported": false,
+            "product_name": "Intel(R) PRO/1000 MT Desktop Adapter",
+            "service_name": "E1G60",
+            "speed": "1000000000",
+            "status": null,
+            "status_info": null,
+            "system_creation_class_name": "Win32_ComputerSystem",
+            "system_name": "WIN2008R2",
+            "time_of_last_reset": "20170205224659.328000-480"
+          },
+          "counters": {
+
+          },
+          "addresses": {
+            "10.0.2.15": {
+              "prefixlen": "24",
+              "netmask": "255.255.255.0",
+              "broadcast": "10.0.2.255",
+              "family": "inet"
+            },
+            "fe80::89a7:ce9d:5105:bb75": {
+              "prefixlen": "64",
+              "family": "inet6",
+              "scope": "Link"
+            },
+            "08:00:27:36:52:31": {
+              "family": "lladdr"
+            }
+          },
+          "mtu": null,
+          "type": "Ethernet 802.3",
+          "arp": {
+            "10.0.2.2": "52:54:00:12:35:02",
+            "10.0.2.3": "52:54:00:12:35:03",
+            "10.0.2.255": "ff:ff:ff:ff:ff:ff",
+            "224.0.0.22": "01:00:5e:00:00:16",
+            "224.0.0.252": "01:00:5e:00:00:fc",
+            "255.255.255.255": "ff:ff:ff:ff:ff:ff"
+          },
+          "encapsulation": "Ethernet"
+        },
+        "0xd": {
+          "configuration": {
+            "ip_address": [
+              "10.20.1.3",
+              "fe80::31b2:3ff6:7331:1598"
+            ],
+            "arp_always_source_route": null,
+            "arp_use_ether_snap": null,
+            "caption": "[00000010] Intel(R) PRO/1000 MT Desktop Adapter",
+            "database_path": "%SystemRoot%\\System32\\drivers\\etc",
+            "dead_gw_detect_enabled": null,
+            "default_ip_gateway": null,
+            "default_tos": null,
+            "default_ttl": null,
+            "description": "Intel(R) PRO/1000 MT Desktop Adapter #2",
+            "dhcp_enabled": false,
+            "dhcp_lease_expires": null,
+            "dhcp_lease_obtained": null,
+            "dhcp_server": null,
+            "dns_domain": null,
+            "dns_domain_suffix_search_order": [
+              "ODC.COM"
+            ],
+            "dns_enabled_for_wins_resolution": false,
+            "dns_host_name": "win2008r2",
+            "dns_server_search_order": null,
+            "domain_dns_registration_enabled": false,
+            "forward_buffer_memory": null,
+            "full_dns_registration_enabled": true,
+            "gateway_cost_metric": null,
+            "igmp_level": null,
+            "index": 10,
+            "interface_index": 13,
+            "ip_connection_metric": 10,
+            "ip_enabled": true,
+            "ip_filter_security_enabled": false,
+            "ip_port_security_enabled": null,
+            "ip_sec_permit_ip_protocols": [
+
+            ],
+            "ip_sec_permit_tcp_ports": [
+
+            ],
+            "ip_sec_permit_udp_ports": [
+
+            ],
+            "ip_subnet": [
+              "255.255.255.0",
+              "64"
+            ],
+            "ip_use_zero_broadcast": null,
+            "ipx_address": null,
+            "ipx_enabled": null,
+            "ipx_frame_type": null,
+            "ipx_media_type": null,
+            "ipx_network_number": null,
+            "ipx_virtual_net_number": null,
+            "keep_alive_interval": null,
+            "keep_alive_time": null,
+            "mac_address": "08:00:27:21:B1:19",
+            "mtu": null,
+            "num_forward_packets": null,
+            "pmtubh_detect_enabled": null,
+            "pmtu_discovery_enabled": null,
+            "service_name": "E1G60",
+            "setting_id": "{BD0B26D8-8E7E-4DAF-A2BB-B0A400D07B1D}",
+            "tcpip_netbios_options": 0,
+            "tcp_max_connect_retransmissions": null,
+            "tcp_max_data_retransmissions": null,
+            "tcp_num_connections": null,
+            "tcp_use_rfc1122_urgent_pointer": null,
+            "tcp_window_size": 64240,
+            "wins_enable_lm_hosts_lookup": true,
+            "wins_host_lookup_file": null,
+            "wins_primary_server": null,
+            "wins_scope_id": "",
+            "wins_secondary_server": null
+          },
+          "instance": {
+            "adapter_type": "Ethernet 802.3",
+            "adapter_type_id": 0,
+            "auto_sense": null,
+            "availability": 3,
+            "caption": "[00000010] Intel(R) PRO/1000 MT Desktop Adapter",
+            "config_manager_error_code": 0,
+            "config_manager_user_config": false,
+            "creation_class_name": "Win32_NetworkAdapter",
+            "description": "Intel(R) PRO/1000 MT Desktop Adapter",
+            "device_id": "10",
+            "error_cleared": null,
+            "error_description": null,
+            "guid": "{BD0B26D8-8E7E-4DAF-A2BB-B0A400D07B1D}",
+            "index": 10,
+            "install_date": null,
+            "installed": true,
+            "interface_index": 13,
+            "last_error_code": null,
+            "mac_address": "08:00:27:21:B1:19",
+            "manufacturer": "Intel",
+            "max_number_controlled": 0,
+            "max_speed": null,
+            "name": "Intel(R) PRO/1000 MT Desktop Adapter #2",
+            "net_connection_id": "Local Area Connection 2",
+            "net_connection_status": 2,
+            "net_enabled": true,
+            "network_addresses": null,
+            "permanent_address": null,
+            "physical_adapter": true,
+            "pnp_device_id": "PCI\\VEN_8086&DEV_100E&SUBSYS_001E8086&REV_02\\3&267A616A&0&40",
+            "power_management_capabilities": null,
+            "power_management_supported": false,
+            "product_name": "Intel(R) PRO/1000 MT Desktop Adapter",
+            "service_name": "E1G60",
+            "speed": "1000000000",
+            "status": null,
+            "status_info": null,
+            "system_creation_class_name": "Win32_ComputerSystem",
+            "system_name": "WIN2008R2",
+            "time_of_last_reset": "20170205224659.328000-480"
+          },
+          "counters": {
+
+          },
+          "addresses": {
+            "10.20.1.3": {
+              "prefixlen": "24",
+              "netmask": "255.255.255.0",
+              "broadcast": "10.20.1.255",
+              "family": "inet"
+            },
+            "fe80::31b2:3ff6:7331:1598": {
+              "prefixlen": "64",
+              "family": "inet6",
+              "scope": "Link"
+            },
+            "08:00:27:21:B1:19": {
+              "family": "lladdr"
+            }
+          },
+          "mtu": null,
+          "type": "Ethernet 802.3",
+          "arp": {
+            "10.20.1.255": "ff:ff:ff:ff:ff:ff",
+            "224.0.0.22": "01:00:5e:00:00:16",
+            "224.0.0.252": "01:00:5e:00:00:fc"
+          },
+          "encapsulation": "Ethernet"
+        }
+      },
+      "default_gateway": "10.0.2.2",
+      "default_interface": "0xb"
+    },
+    "counters": {
+      "network": {
+
+      }
+    },
+    "ipaddress": "10.0.2.15",
+    "macaddress": "08:00:27:36:52:31",
+    "ip6address": "fe80::31b2:3ff6:7331:1598",
+    "os": "windows",
+    "os_version": "6.1.7601",
+    "platform": "windows",
+    "platform_version": "6.1.7601",
+    "platform_family": "windows",
+    "uptime_seconds": 769,
+    "uptime": "12 minutes 49 seconds",
+    "virtualization": {
+      "systems": {
+        "vbox": "guest"
+      },
+      "system": "vbox",
+      "role": "guest"
+    },
+    "languages": {
+      "perl": {
+        "version": "5.8.8",
+        "archname": "msys-64int"
+      },
+      "powershell": {
+        "version": "2.0",
+        "ws_man_stack_version": "2.0",
+        "serialization_version": "1.1.0.1",
+        "clr_version": "2.0.50727.5420",
+        "build_version": "6.1.7601.17514",
+        "compatible_versions": [
+          "1.0",
+          "2.0"
+        ],
+        "remoting_protocol_version": "2.1"
+      },
+      "ruby": {
+        "platform": "i386-mingw32",
+        "version": "2.3.1",
+        "release_date": "2016-04-26",
+        "target": "i386-w64-mingw32",
+        "target_cpu": "i386",
+        "target_vendor": "w64",
+        "target_os": "mingw32",
+        "host": "i686-w64-mingw32",
+        "host_cpu": "i686",
+        "host_os": "mingw32",
+        "host_vendor": "w64",
+        "bin_dir": "C:/opscode/chefdk/embedded/bin",
+        "ruby_bin": "C:/opscode/chefdk/embedded/bin/ruby",
+        "gems_dir": "C:/opscode/chefdk/embedded/lib/ruby/gems/2.3.0",
+        "gem_bin": "C:/opscode/chefdk/embedded/bin/gem"
+      }
+    },
+    "chef_packages": {
+      "chef": {
+        "version": "12.16.42",
+        "chef_root": "C:/opscode/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.16.42-universal-mingw32/lib"
+      },
+      "ohai": {
+        "version": "8.21.0",
+        "ohai_root": "C:/opscode/chefdk/embedded/lib/ruby/gems/2.3.0/gems/ohai-8.21.0/lib/ohai"
+      }
+    },
+    "dmi": {
+
+    },
+    "cloud_v2": null,
+    "command": {
+
+    },
+    "hostname": "win2008r2",
+    "machinename": "WIN2008R2",
+    "fqdn": "win2008r2",
+    "domain": null,
+    "keys": {
+      "ssh": {
+
+      }
+    },
+    "fips": {
+      "kernel": {
+        "enabled": false
+      }
+    },
+    "ohai_time": 1486364417.747485,
+    "packages": {
+      "Oracle VM VirtualBox Guest Additions 4.3.18": {
+        "version": "4.3.18.0",
+        "publisher": "Oracle Corporation"
+      },
+      "Chef Development Kit v1.0.3": {
+        "version": "1.0.3.1",
+        "publisher": "Chef Software, Inc.",
+        "installdate": "20170205"
+      }
+    },
+    "root_group": "Administrators",
+    "time": {
+      "timezone": "Pacific Standard Time"
+    },
+    "recipes": [
+
+    ],
+    "expanded_run_list": [
+
+    ],
+    "roles": [
+      "dotnet"
+    ]
+  },
+  "run_list": [
+    "role[dotnet]"
+  ]
+}

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<udm.DeploymentPackage version="$BUILD_NUMBER.0" application="$APPLICATION">
+  <application />
+  <orchestrator />
+  <deployables>
+    <iis.ApplicationPoolSpec name="/WebAPI-FinancialSoundingsPool">
+      <tags />
+      <managedRuntimeVersion>v4.0</managedRuntimeVersion>
+      <recyclingPeriodicRestartSchedule />
+    </iis.ApplicationPoolSpec>
+	
+    <iis.WebContent name="/WebAPI-FundFiles">
+      <tags />
+      <scanPlaceholders>false</scanPlaceholders>
+      
+      <fileUri>http://algsasc2tm0076.r1-core.r1.aig.net:8081/artifactory/aig-generic-local/nuget/Valic.Fund.WebApi-1.0.0.$BUILD_NUMBER.zip</fileUri>
+      <targetPath>{{WEB_CONTENT_PARENT_DIR}}Fundapi</targetPath>
+    </iis.WebContent>
+    <iis.WebsiteSpec name="/WebAPI-FundWebsite">
+      <tags />
+      <websiteName>devops-demo.valic.com</websiteName>
+      <physicalPath>{{WEB_CONTENT_PARENT_DIR}}Fundapi</physicalPath>
+      <applicationPoolName>WebAPI-FundPool</applicationPoolName>
+      <bindings>
+        <iis.WebsiteBindingSpec name="/WebAPI-FundWebsite/8080">
+          <port>4437</port>
+        </iis.WebsiteBindingSpec>
+      </bindings>
+      <authentication />
+      <isapiFilters />
+    </iis.WebsiteSpec>
+    <iis.WebContent name="/WebAPI-ParticipantFiles">
+      <tags />
+      <scanPlaceholders>false</scanPlaceholders>
+      
+      <fileUri>http://algsasc2tm0076.r1-core.r1.aig.net:8081/artifactory/aig-generic-local/nuget/Valic.Participant.WebApi-1.0.0.$BUILD_NUMBER.zip</fileUri>
+      <targetPath>{{WEB_CONTENT_PARENT_DIR}}Participantapi</targetPath>
+    </iis.WebContent>
+    <iis.WebsiteSpec name="/WebAPI-ParticipantWebsite">
+      <tags />
+      <websiteName>devops-demo.valic.com</websiteName>
+      <physicalPath>{{WEB_CONTENT_PARENT_DIR}}Participantapi</physicalPath>
+      <applicationPoolName>WebAPI-ParticipantPool</applicationPoolName>
+      <bindings>
+        <iis.WebsiteBindingSpec name="/WebAPI-ParticipantWebsite/8080">
+          <port>4437</port>
+        </iis.WebsiteBindingSpec>
+      </bindings>
+      <authentication />
+      <isapiFilters />
+    </iis.WebsiteSpec>
+    <iis.WebContent name="/WebAPI-GroupFiles">
+      <tags />
+      <scanPlaceholders>false</scanPlaceholders>
+      
+      <fileUri>http://algsasc2tm0076.r1-core.r1.aig.net:8081/artifactory/aig-generic-local/nuget/Valic.Group.WebApi-1.0.0.$BUILD_NUMBER.zip</fileUri>
+      <targetPath>{{WEB_CONTENT_PARENT_DIR}}Groupapi</targetPath>
+    </iis.WebContent>
+    <iis.WebContent name="/WebAPP-MyValicFiles">
+      <tags />
+      <scanPlaceholders>false</scanPlaceholders>
+      
+      <fileUri>http://algsasc2tm0076.r1-core.r1.aig.net:8081/artifactory/aig-generic-local/nuget/Valic.MyValic.Mvc-1.0.0.$BUILD_NUMBER.zip</fileUri>
+      <targetPath>{{WEB_CONTENT_PARENT_DIR}}myvalic</targetPath>
+    </iis.WebContent>
+    <iis.WebContent name="/WebAPI-SingleSignOnFiles">
+      <tags />
+      <scanPlaceholders>false</scanPlaceholders>
+      
+      <fileUri>http://algsasc2tm0076.r1-core.r1.aig.net:8081/artifactory/aig-generic-local/nuget/Valic.SingleSignOn.Mvc-1.0.0.$BUILD_NUMBER.zip</fileUri>
+      <targetPath>{{WEB_CONTENT_PARENT_DIR}}Singlesignon</targetPath>
+    </iis.WebContent>
+    <iis.WebsiteSpec name="/WebAPI-FinancialSoundingsWebsite">
+      <tags />
+      <websiteName>devops-demo.valic.com</websiteName>
+      <physicalPath>{{WEB_CONTENT_PARENT_DIR}}FinancialSoundingsWebApi</physicalPath>
+      <applicationPoolName>WebAPI-FinancialSoundingsPool</applicationPoolName>
+      <bindings>
+        <iis.WebsiteBindingSpec name="/WebAPI-FinancialSoundingsWebsite/8080">
+          <port>4437</port>
+        </iis.WebsiteBindingSpec>
+      </bindings>
+      <authentication />
+      <isapiFilters />
+    </iis.WebsiteSpec>
+    <iis.ApplicationPoolSpec name="/WebAPP-MyValicPool">
+      <tags />
+      <managedRuntimeVersion>v4.0</managedRuntimeVersion>
+      <recyclingPeriodicRestartSchedule />
+    </iis.ApplicationPoolSpec>
+    <iis.WebsiteSpec name="/WebAPI-AdvisoryWebsite">
+      <tags />
+      <websiteName>devops-demo.valic.com</websiteName>
+      <physicalPath>{{WEB_CONTENT_PARENT_DIR}}Advisorapi</physicalPath>
+      <applicationPoolName>WebAPI-AdvisoryPool</applicationPoolName>
+      <bindings>
+        <iis.WebsiteBindingSpec name="/WebAPI-AdvisoryWebsite/8080">
+          <port>4437</port>
+        </iis.WebsiteBindingSpec>
+      </bindings>
+      <authentication />
+      <isapiFilters />
+    </iis.WebsiteSpec>
+    <iis.ApplicationPoolSpec name="/WebAPI-ParticipantPool">
+      <tags />
+      <managedRuntimeVersion>v4.0</managedRuntimeVersion>
+      <recyclingPeriodicRestartSchedule />
+    </iis.ApplicationPoolSpec>
+    <iis.WebContent name="/WebAPI-FinancialSoundingsFiles">
+      <tags />
+      <scanPlaceholders>false</scanPlaceholders>
+      
+      <fileUri>http://algsasc2tm0076.r1-core.r1.aig.net:8081/artifactory/aig-generic-local/nuget/Valic.FinancialSoundings.WebApi-1.0.0.$BUILD_NUMBER.zip</fileUri>
+      <targetPath>{{WEB_CONTENT_PARENT_DIR}}FinancialSoundingsWebApi</targetPath>
+    </iis.WebContent>
+    <iis.WebsiteSpec name="/WebAPI-GroupWebsite">
+      <tags />
+      <websiteName>devops-demo.valic.com</websiteName>
+      <physicalPath>{{WEB_CONTENT_PARENT_DIR}}Groupapi</physicalPath>
+      <applicationPoolName>WebAPI-GroupPool</applicationPoolName>
+      <bindings>
+        <iis.WebsiteBindingSpec name="/WebAPI-GroupWebsite/8080">
+          <port>4437</port>
+        </iis.WebsiteBindingSpec>
+      </bindings>
+      <authentication />
+      <isapiFilters />
+    </iis.WebsiteSpec>
+    <iis.ApplicationPoolSpec name="/WebAPI-SingleSignOnPool">
+      <tags />
+      <managedRuntimeVersion>v4.0</managedRuntimeVersion>
+      <recyclingPeriodicRestartSchedule />
+    </iis.ApplicationPoolSpec>
+    <iis.ApplicationPoolSpec name="/WebAPI-AdvisoryPool">
+      <tags />
+      <managedRuntimeVersion>v4.0</managedRuntimeVersion>
+      <recyclingPeriodicRestartSchedule />
+    </iis.ApplicationPoolSpec>
+    <iis.WebContent name="/WebAPI-AdvisoryFiles">
+      <tags />
+      <scanPlaceholders>false</scanPlaceholders>
+      
+      <fileUri>http://algsasc2tm0076.r1-core.r1.aig.net:8081/artifactory/aig-generic-local/nuget/Valic.Advisor.WebApi-1.0.0.$BUILD_NUMBER.zip</fileUri>
+      <targetPath>{{WEB_CONTENT_PARENT_DIR}}Advisorapi</targetPath>
+    </iis.WebContent>
+    <iis.WebsiteSpec name="/WebAPI-SingleSignOnWebsite">
+      <tags />
+      <websiteName>devops-demo.valic.com</websiteName>
+      <physicalPath>{{WEB_CONTENT_PARENT_DIR}}Singlesignon</physicalPath>
+      <applicationPoolName>WebAPI-SingleSignOnPool</applicationPoolName>
+      <bindings>
+        <iis.WebsiteBindingSpec name="/WebAPI-SingleSignOnWebsite/8080">
+          <port>4437</port>
+        </iis.WebsiteBindingSpec>
+      </bindings>
+      <authentication />
+      <isapiFilters />
+    </iis.WebsiteSpec>
+    <iis.ApplicationPoolSpec name="/WebAPI-GroupPool">
+      <tags />
+      <managedRuntimeVersion>v4.0</managedRuntimeVersion>
+      <recyclingPeriodicRestartSchedule />
+    </iis.ApplicationPoolSpec>
+    <iis.WebsiteSpec name="/WebAPP-MyValicWebsite">
+      <tags />
+      <websiteName>devops-demo.valic.com</websiteName>
+      <physicalPath>{{WEB_CONTENT_PARENT_DIR}}myvalic</physicalPath>
+      <applicationPoolName>WebAPP-MyValicPool</applicationPoolName>
+      <bindings>
+        <iis.WebsiteBindingSpec name="/WebAPP-MyValicWebsite/8080">
+          <port>4437</port>
+        </iis.WebsiteBindingSpec>
+      </bindings>
+      <authentication />
+      <isapiFilters />
+    </iis.WebsiteSpec>
+    <iis.ApplicationPoolSpec name="/WebAPI-FundPool">
+      <tags />
+      <managedRuntimeVersion>v4.0</managedRuntimeVersion>
+      <recyclingPeriodicRestartSchedule />
+    </iis.ApplicationPoolSpec>
+  </deployables>
+  <applicationDependencies />
+  <dependencyResolution>LATEST</dependencyResolution>
+  <undeployDependencies>false</undeployDependencies>
+</udm.DeploymentPackage>

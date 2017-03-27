@@ -1,0 +1,52 @@
+{
+  "name": "dotnet",
+  "description": "DotNet Customization",
+  "json_class": "Chef::Role",
+  "chef_type": "role",
+  "default_attributes": {
+  	"sql_server" : {
+		 "server": { 
+			"url": "file:///C:/vagrant/binaries/dotnet/SQLEXPR_x64_ENU.exe" 
+		 }, 
+		 "version": "2014",
+		 "server_sa_password": "changeit",
+		 "accept_eula": "true",
+		 "update_enabled": "false",
+		 "instance_name": "MSSQLSERVER",
+		 "sysadmins": [
+			"vagrant"
+		 ],
+		 "agent_startup": "Automatic"
+	},
+	"ms_dotnet45": {
+		"http_url": "file:///C:/vagrant/binaries/dotnet/NDP452-KB2901907-x86-x64-AllOS-ENU.exe"
+	}, 					 
+   	"visualstudio": {
+		"2015": { 
+			"community": { 
+				"default_source": "file:///C:/vagrant/binaries/dotnet"
+				
+			}
+		}
+	},
+	"nunit": {
+		"version":"2.6.4"   
+	} 
+  },
+  "override_attributes": {
+  },
+  "run_list_a": [
+  	"ms_dotnet45::default",
+  	"visualstudio::default",
+  	"nunit::default",
+  	"sql_server::server",
+  	"sql_data::default"	
+  ],
+  "run_list": [
+  	"ms_dotnet45::default",
+  	"visualstudio::default",
+  	"nuget::default"
+  ],
+  "env_run_lists": {
+  }
+}     

@@ -1,0 +1,8 @@
+{
+  "run_list": [
+   /* "role[dev]", */
+	"role[aem]"
+  ]  
+}
+
+

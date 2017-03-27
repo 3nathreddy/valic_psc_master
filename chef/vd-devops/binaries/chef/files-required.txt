@@ -1,0 +1,2 @@
+jdk-8u101-linux-x64.tar.gz
+chefdk-1.0.3-1.el7.x86_64.rpm

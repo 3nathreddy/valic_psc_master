@@ -1,0 +1,128 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
+
+Vagrant.configure('2') do |config|
+   	
+   # Disable SSL checking for base box download, as per bug, see https://github.com/mitchellh/vagrant/issues/6770
+   config.vm.box_download_insecure = true	  
+   	  
+  	# Modify "hosts" files on each VM with for VMs to speak to each on local private network, 10.0.2.*;
+	config.vm.provision :hosts do |provisioner|
+		# define private IP address and host name of Windows 2008R2 Box.
+		provisioner.add_host '10.20.1.3', ['win2008r2']
+    	# define private IP address and host name of Centos 7 Box. 
+    	provisioner.add_host '10.20.1.4', ['centos7']
+  	end
+   
+	# START - Centos7 Box configuration  
+	config.vm.define :centos7 do |node|
+		# Disable SSL checking for base box download, as per bug, see https://github.com/mitchellh/vagrant/issues/6770
+		node.vm.box_download_insecure = true
+		# base box definition, using this since it has VirtualBox Guest Definitions in the base box, and on HashiCorp list
+		node.vm.box = "geerlingguy/centos7"
+		# Map guest VM/guest ports to Host ports
+		node.vm.network "forwarded_port", guest: 4502, host: 4502
+  		node.vm.network "forwarded_port", guest: 4503, host: 4503
+  		node.vm.network "forwarded_port", guest: 4580, host: 4580
+		# Map private network ip address
+		node.vm.network :private_network, :ip => '192.168.56.101'
+		# sync hosts with each other.
+		node.vm.provision :hosts, :sync_hosts => true
+		#node.vm.provision :shell, path: "increase_swap.sh"
+		# Use shell provisioner for any bootstrapping, i.e. Chef DK
+		node.vm.provision :shell, path: "bootstrap.sh"
+		file_to_disk = 'large_disk.vdi'
+		# VM Memory and CPU configuration
+		node.vm.provider "virtualbox" do |v|
+			# base memory in GB
+			v.memory = 6000
+			# base vCPU
+			v.cpus = 2
+			#unless File.exist?(file_to_disk)
+			#	v.customize ['createhd', '--filename', file_to_disk, '--size', 20 * 1024]
+			#	v.customize ['storageattach', :id, '--storagectl', 'IDE Controller', '--port', 1, '--device', 0, '--type', 'hdd', '--medium', file_to_disk]
+		#	end
+		end
+	# END - Centos7 Box configuration
+	end  
+  
+ 	# START: Windows 2008-R2 Box configuration
+  	config.vm.define :win2008r2 do |node|
+  		# Disable SSL checking for base box download, as per bug, see https://github.com/mitchellh/vagrant/issues/6770
+  		node.vm.box_download_insecure = true
+  		# base box definition, using this since it has VirtualBox Guest Definitions in the base box, and on HarshiCorp list.
+    	#node.vm.box = "opentable/win-2008r2-standard-amd64-nocm"
+    	node.vm.box = "charris/windows-2008-r2-x64"
+    	# Map guest VM/guest ports to Host ports
+    	node.vm.network :forwarded_port, guest: 80,   host: 9506
+  		# Map private network ip address
+    	node.vm.network :private_network, :ip => '192.168.56.102'
+  		# sync hosts with each other.
+  		node.vm.provision :hosts, :sync_hosts => true
+		# Use shell provisioner for any bootstrapping, i.e. Chef DK  	
+  		node.vm.provision "bootstrap", type: "shell" do |s|
+  			s.path = "bootstrap.bat"
+  			s.upload_path = "C:\\tmp\\" + Random.new_seed.to_s + "_" + "bootstrap.bat"
+		end
+
+		# alternative way to use Vagrant file to load chef-client in local mode, but switching to doing within VM itself		
+  		# Chef Zero
+  		# node.vm.provision "chef_zero" do |chef|
+		#	#	# tell vagrant not to install the latest version of Chef DK. 
+		#	chef.install = false
+		#	#	# set path of cookbooks/recipes for chef
+		#	chef.nodes_path = ["chef-repo/win2008r2/nodes"]
+		#	chef.cookbooks_path = ["chef-repo/win2008r2/cookbooks"]	
+		#	chef.add_recipe "ms_dotnet45::default"
+		#	chef.add_recipe "visualstudio::default"
+		#	#chef.add_recipe "nuget"
+		#	#chef.add_recipe "nunit"
+		#	#chef.add_recipe "sql_server::server"
+		#	#chef.add_recipe "sql_data::default"	
+		#	
+		#	chef.json = {
+		#		:ms_dotnet45 => {
+		#       	:http_url => "file:///C:/vagrant/binaries/dotnet/NDP452-KB2901907-x86-x64-AllOS-ENU.exe"
+		#		}, 					 
+		#	   :visualstudio => {
+		#			:"2015" => { 
+		#				:community => { 
+		#					:default_source  =>  "file:///C:/vagrant/binaries/dotnet/vs2015.3.com_enu.iso",
+		#					:checksum  => "96463572892a0b4dd564f58fbbb1a38d705cad8ca46805dbb4fe6576255c6c01"
+		#				}
+		#			}
+		#		},
+		#		#:nunit => {
+		#       #	:version => "2.6.4"   
+        #		#},
+		#	 	#:sql_server => {
+		#		#	:server => { 
+		#		#		:url =>  "file:///C:/vagrant/binaries/dotnet/SQLEXPR_x64_ENU.exe"
+		#		#	}, 
+		#		#	:version => '2014',
+		#		# 	:server_sa_password => 'changeit',
+		#		# 	:accept_eula => true,
+		#		# 	:update_enabled => false,
+		#		# 	:instance_name  => 'MSSQLSERVER',
+		#		# 	:sysadmins => ['vagrant'],
+		#		# 	:agent_startup => 'Automatic'
+		#		#} 
+		#	}	  
+	 	#end
+		
+  		# VM Memory and CPU configuration  
+  		node.vm.provider "virtualbox" do |v|
+  			# base memory in GB
+  			v.memory = 2048
+  			# base vCPU
+  			v.cpus = 2
+		end
+  	# END: Windows 2008-R2 Box configuration
+  	end
+  
+end
