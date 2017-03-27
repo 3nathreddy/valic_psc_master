@@ -2,9 +2,13 @@
 //{
 echo 'hi'
 	env.WORKSPACE = 'C:/jenkins_home/workspace/valic-pso/Consumer-Valic-PipelineBuilder/valic-pso/master'
+echo 'hi'
 	env();
+echo 'hi'
 	env.WORKSPACE=pwd()
+echo 'hi'
 	try 
+echo 'hi'
 	{ 
 		stage 'Checkout'
 		
