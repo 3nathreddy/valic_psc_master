@@ -26,7 +26,7 @@
 <!--  <Property Name="sonar.host.url">http://localhost:9000/</Property> 	  -->
 	<!-- <Property Name="sonar.login">c2f0607dfb2328535351231664ed9ed055b640c8</Property> -->
 	<Property Name="sonar.login">admin</Property> 
-	<Property Name="sonar.password">capgemini</Property> 
+	<Property Name="sonar.password">admin</Property> 
 	<Property Name="sonar.profile.cSharp">./sonar_qualityTemplate.xml</Property> 
 
   <!-- Required only for versions of SonarQube prior to 5.2 -->
