@@ -20,12 +20,13 @@
 <SonarQubeAnalysisProperties  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
 
 	<!-- <Property Name="sonar.host.url">http://dlgsasc2tm0167.r1-core.r1.aig.net:9000/</Property>  -->
-	 <Property Name="sonar.host.url">http://algsasc2tm0092.r1-core.r1.aig.net:9000/</Property> 
+	 <Property Name="sonar.host.url">http://127.0.0.1:9000//</Property> 
 <!-- 	 <Property Name="sonar.host.url"> http://localhost:9000/</Property> -->
 	 	
 <!--  <Property Name="sonar.host.url">http://localhost:9000/</Property> 	  -->
 	<!-- <Property Name="sonar.login">c2f0607dfb2328535351231664ed9ed055b640c8</Property> -->
-	<Property Name="sonar.login">ef1feba404048db78c60d318e083e3e6558ec6da</Property> 
+	<Property Name="sonar.login">admin</Property> 
+	<Property Name="sonar.password">capgemini</Property> 
 	<Property Name="sonar.profile.cSharp">./sonar_qualityTemplate.xml</Property> 
 
   <!-- Required only for versions of SonarQube prior to 5.2 -->
